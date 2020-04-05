@@ -10,7 +10,7 @@ def home(request):
     import json
     if request.method=="POST":
         input_s=request.POST['input_stock']
-        URL="https://sandbox.iexapis.com/stable/stock/"+input_s+"/quote?token=Tpk_838433c0ccd4426ba6710cf6e41174e0"
+        URL="https://sandbox.iexapis.com/stable/stock/"+input_s+"/quote?token="
         #print(URL)
         api_requests=requests.get(url=URL)
         try:
@@ -40,7 +40,7 @@ def add_stock(request):
         data=stock.objects.all()
         output=[]
         for data_item in data:
-            URL="https://sandbox.iexapis.com/stable/stock/"+str(data_item)+"/quote?token=Tpk_838433c0ccd4426ba6710cf6e41174e0"
+            URL="https://sandbox.iexapis.com/stable/stock/"+str(data_item)+"/quote?token="
         #print(URL)
             api_requests=requests.get(url=URL)
             try:
